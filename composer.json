@@ -1,0 +1,16 @@
+{
+    "name": "thiagoprz/here-geocoder",
+    "description": "Laravel package to explore Here Maps API",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Thiago Przyczynski",
+            "email": "przyczynski@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
