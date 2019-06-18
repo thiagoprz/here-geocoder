@@ -6,6 +6,9 @@ use GuzzleHttp\Client;
 
 class HereGeocoder
 {
+    /**
+     * @see Geocoder API Documentation: https://developer.here.com/documentation/geocoder/topics/quick-start-geocode.html
+     */
     const API_GEOCODER_URL = 'https://geocoder.api.here.com/6.2/geocode.json';
 
     /**
@@ -13,8 +16,8 @@ class HereGeocoder
      */
     public function __construct()
     {
-        $this->app_id = config('here.api_id');
-        $this->app_code = config('here.app_code');
+        $this->app_id = env('HERE_API_ID');
+        $this->app_code = env('HERE_APP_CODE');
     }
 
     /**
