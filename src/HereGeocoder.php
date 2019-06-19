@@ -36,9 +36,7 @@ class HereGeocoder
         if ($params) {
             $url = $url . '?' . http_build_query($params);
         }
-        $data = $client->request('GET', $url, [
-            'http_errors' => false,
-        ]);
+        $data = $client->request('GET', $url);
         return json_decode($data->getBody());
     }
 
@@ -53,4 +51,6 @@ class HereGeocoder
         return $this->get(self::API_GEOCODER_URL, ['searchtext' => $address]);
     }
 
+    /* @todo Batch geolocation */
+    /* @todo Batch places */
 }

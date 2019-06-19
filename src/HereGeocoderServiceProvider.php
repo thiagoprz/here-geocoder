@@ -5,6 +5,7 @@ use Illuminate\Support\ServiceProvider;
 
 /**
  * Here Geocoder Laravel Service Provider
+ * @package Thiagoprz\HereGeocoder
  */
 class HereGeocoderServiceProvider extends ServiceProvider
 {
@@ -15,7 +16,10 @@ class HereGeocoderServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
+        // Testing tool controller
+        $this->app->make('Thiagoprz\HereGeocoder\Http\Controllers\HereGeocoderController');
+        // Views for the testing tool
+        $this->loadViewsFrom(__DIR__.'/views', 'here-geocoder');
     }
 
     /**
@@ -25,7 +29,8 @@ class HereGeocoderServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
+        // Routes for testing tool
+        include __DIR__.'/routes/web.php';
     }
 
 }
