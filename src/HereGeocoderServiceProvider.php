@@ -31,8 +31,10 @@ class HereGeocoderServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Routes for testing tool
-        include __DIR__.'/routes/web.php';
+        if (!in_array(env('APP_ENV'), ['prod', 'production'])) {
+            // Routes for testing tool
+            include __DIR__.'/routes/web.php';
+        }
     }
 
 }
