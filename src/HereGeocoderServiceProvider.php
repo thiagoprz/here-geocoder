@@ -16,10 +16,12 @@ class HereGeocoderServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // Testing tool controller
-        $this->app->make('Thiagoprz\HereGeocoder\Http\Controllers\HereGeocoderController');
-        // Views for the testing tool
-        $this->loadViewsFrom(__DIR__.'/views', 'here-geocoder');
+        if (!in_array(env('APP_ENV'), ['prod', 'production'])) {
+            // Testing tool controller
+            $this->app->make('Thiagoprz\HereGeocoder\Http\Controllers\HereGeocoderController');
+            // Views for the testing tool
+            $this->loadViewsFrom(__DIR__.'/views', 'here-geocoder');
+        }
     }
 
     /**

@@ -7,6 +7,15 @@ A Laravel package to work with Here Maps API.
 -------------
 `composer require thiagoprz/here-geocoder`
 
+- Add provider on config/app.php 
+```
+'providers' => [
+    ...
+    Thiagoprz\HereGeocoder\HereGeocoderServiceProvider::class,
+    ...
+]
+```
+
 - Add two enviromental variables on your projects .env file (or on your system variables):
 *HERE_API_ID* and *HERE_APP_CODE*. 
 
@@ -26,9 +35,15 @@ $geocoder->geocode('Champ de Mars, 5 Avenue Anatole France, 75007 Paris');
 ```
 For more information about geocode API check the Here API documentation: https://developer.here.com/documentation/geocoder/topics/what-is.html
 
+**Testing Tool**
+--------------
+To make it easier Here Geocoder comes with a tool for testing the geocode functionality. After installation access http://YOU_PROJECT_LOCAL_URL/here_geocoder and you will be able to test the geocoding feature without having to code.
+
+The testing tool only will be available when APP_ENV is not running on production (prod or production).
 
 **Roadmap**
 -------------
+- Unit Tests
 - Add batch geolocation support
 - Add batch places support
 - Add Facade for simpler access to geocode and future methods
