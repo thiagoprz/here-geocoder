@@ -34,6 +34,8 @@ class HereGeocoderServiceProvider extends ServiceProvider
         if (!in_array(env('APP_ENV'), ['prod', 'production'])) {
             // Routes for testing tool
             include __DIR__.'/routes/web.php';
+            // Translations
+            $this->loadTranslationsFrom(__DIR__.'/resources/lang', 'here-geocoder');
         }
     }
 

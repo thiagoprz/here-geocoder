@@ -96,10 +96,10 @@
             <form method="post">
                 {{ csrf_field() }}
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Address..." aria-label="Address"
+                    <input type="text" class="form-control" placeholder="{{ trans('here-geocoder::messages.address') }}..." aria-label="Address"
                            aria-describedby="button-address" name="address">
                     <div class="input-group-prepend">
-                        <button class="btn btn-outline-secondary"  type="submit" id="button-address">Search</button>
+                        <button class="btn btn-outline-secondary"  type="submit" id="button-address">{{ trans('here-geocoder::messages.search') }}</button>
                     </div>
                 </div>
             </form>
@@ -107,8 +107,8 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title">Search Result</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <h5 class="modal-title">{{ trans('here-geocoder::messages.search_results') }}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="{{ trans('here-geocoder::messages.close') }}">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -116,14 +116,14 @@
                             <pre id="json-renderer"></pre>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ trans('here-geocoder::messages.close') }}</button>
                         </div>
                     </div>
                 </div>
             </div>
         @else
             <div class="alert alert-danger" role="alert">
-                Missing configuration. See <a href="https://github.com/thiagoprz/here-geocoder" target="_blank">README.md</a>.
+                {{ trans('here-geocoder::messages.missing_configuration') }} <a href="https://github.com/thiagoprz/here-geocoder" target="_blank">README.md</a>.
             </div>
         @endif
 
@@ -150,7 +150,7 @@
                         $('#json-renderer').jsonViewer(data, options);
                         $('#modalGeocoder').modal('show');
                     } else {
-                        alert('Geolocation didn\'t work. Check your configuration');
+                        alert('{{ trans('here-geocoder::messages.geolocation_failed') }}');
                     }
                     $(this).removeAttr('disabled');
                 }
