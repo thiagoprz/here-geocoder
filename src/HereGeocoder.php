@@ -37,8 +37,6 @@ class HereGeocoder
     protected function get($url, $params = null)
     {
         $client = new Client();
-        $params['app_id'] = $this->app_id;
-        $params['app_code'] = $this->app_code;
         if ($params) {
             $url = $url . '?' . http_build_query($params);
         }
@@ -54,7 +52,11 @@ class HereGeocoder
      */
     public function geocode($address)
     {
-        return $this->get(self::API_GEOCODER_URL, ['searchtext' => $address]);
+        return $this->get(self::API_GEOCODER_URL, [
+            'searchtext' => $address,
+            'app_id' => $this->app_id,
+            'app_code' => $this->app_code,
+        ]);
     }
 
     /**
@@ -68,9 +70,9 @@ class HereGeocoder
     public function reverseGeocode($latitude, $longitude, $radius)
     {
         return $this->get(self::API_REVERSE_GEOCODER_URL, [
+            'apiKey' => $this->app_key,
             'pos' => "$latitude,$longitude,$radius",
             'mode' => "retrieveAddresses",
-            'apiKey' => $this->app_key,
         ]);
     }
 
