@@ -67,7 +67,7 @@ class HereGeocoder
     {
         return $this->get(self::API_REVERSE_GEOCODER_URL, [
             'apiKey' => env("HERE_API_KEY"),
-            'pos' => "$latitude,$longitude,$radius",
+            'prox' => "$latitude,$longitude,$radius",
             'mode' => "retrieveAddresses",
         ]);
     }
