@@ -3,7 +3,7 @@
 namespace Thiagoprz\HereGeocoder\Http\Controllers;
 
 
-use App\Http\Controllers\Controller;
+use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use Thiagoprz\HereGeocoder\HereGeocoder;
 
@@ -11,7 +11,7 @@ use Thiagoprz\HereGeocoder\HereGeocoder;
  * HereGeocoderController
  * @package Thiagoprz\HereGeocoder\Http\Controllers
  */
-class HereGeocoderController extends Controller
+class HereGeocoderController extends BaseController
 {
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View

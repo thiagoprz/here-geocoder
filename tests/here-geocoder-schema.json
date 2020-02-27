@@ -1,0 +1,22 @@
+{
+  "type" : "object",
+  "properties" : {
+    "Response" : {
+      "type" : "object",
+      "properties": {
+        "MetaInfo": {
+          "type": "object",
+          "properties": {
+            "Timestamp": {
+              "type": "string"
+            }
+          }
+        },
+        "View": {
+          "type": "object"
+        }
+      }
+    }
+  },
+  "required": ["Response"]
+}

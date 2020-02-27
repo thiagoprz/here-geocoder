@@ -17,6 +17,19 @@
     "autoload": {
         "classmap": [
             "src/"
-        ]
+        ],
+        "psr-4": {
+            "Thiagoprz\\HereGeocoder\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Thiagoprz\\HereGeocoder\\Test\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.3@dev",
+        "orchestra/testbench": "^3.10@dev",
+        "estahn/phpunit-json-assertions": "@stable"
     }
 }
