@@ -12,9 +12,6 @@ class HereGeocoder
     const API_GEOCODER_URL = 'https://geocoder.api.here.com/6.2/geocode.json';
     const API_REVERSE_GEOCODER_URL = 'https://reverse.geocoder.ls.hereapi.com/6.2/reversegeocode.json';
 
-    protected $app_id;
-    protected $app_code;
-    protected $app_key;
 
     /**
      * HereGeocoder constructor.
@@ -23,7 +20,6 @@ class HereGeocoder
     {
         $this->app_id = env('HERE_API_ID');
         $this->app_code = env('HERE_APP_CODE');
-        $this->app_key = env('HERE_APP_KEY');
     }
 
     /**
@@ -70,7 +66,7 @@ class HereGeocoder
     public function reverseGeocode($latitude, $longitude, $radius)
     {
         return $this->get(self::API_REVERSE_GEOCODER_URL, [
-            'apiKey' => $this->app_key,
+            'apiKey' => env("HERE_API_KEY"),
             'pos' => "$latitude,$longitude,$radius",
             'mode' => "retrieveAddresses",
         ]);
