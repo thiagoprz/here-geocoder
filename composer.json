@@ -30,6 +30,6 @@
     "require-dev": {
         "phpunit/phpunit": "^8.0 | ^9.0 |^10.0 ",
         "orchestra/testbench": "^8.0",
-        "estahn/phpunit-json-assertions": "@stable"
+        "estahn/phpunit-json-assertions": "^4.0"
     }
 }
