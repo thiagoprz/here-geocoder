@@ -26,4 +26,9 @@ abstract class TestCase extends BaseTestCase
             HereGeocoderServiceProvider::class,
         ];
     }
+
+    protected function getEnvironmentSetUp($app)
+    {    
+        // Implementation code
+    }
 }
