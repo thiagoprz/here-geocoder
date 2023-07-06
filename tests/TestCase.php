@@ -27,7 +27,7 @@ abstract class TestCase extends BaseTestCase
         ];
     }
 
-    public function getEnvironmentSetUp()
+    public function getEnvironmentSetUp($app)
     {
       //
     }
