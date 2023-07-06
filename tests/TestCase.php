@@ -3,9 +3,9 @@
 namespace Thiagoprz\HereGeocoder\Test;
 
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
-use Thiagoprz\HereGeocoder\HereGeocoderServiceProvider;
-use Orchestra\Testbench\TestCase as OrchestraTestCase;
+use Thiagoprz\HereGeocoder\HereGeocoder;
 use Orchestra\Testbench\Concerns\CreatesApplication;
+use Thiagoprz\HereGeocoder\HereGeocoderServiceProvider;
 
 abstract class TestCase extends BaseTestCase
 {
@@ -25,10 +25,5 @@ abstract class TestCase extends BaseTestCase
         return [
             HereGeocoderServiceProvider::class,
         ];
-    }
-
-    protected function getEnvironmentSetUp($app)
-    {    
-        // Implementation code
     }
 }
