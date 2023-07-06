@@ -6,9 +6,6 @@ use Thiagoprz\HereGeocoder\HereGeocoder;
 
 class HereGeocoderFunctionTest extends TestCase
 {
-
-    use JsonAssert;
-
     protected $hereGeocoder;
 
     public function setUp(): void
