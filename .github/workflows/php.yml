@@ -39,4 +39,4 @@ jobs:
           composer update --prefer-dist --no-interaction
     - name: Run tests
       run: |
-          ./vendor/bin/phpunit --coverage-clover coverage.xml
+          ./vendor/bin/phpunit
