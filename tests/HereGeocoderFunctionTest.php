@@ -6,14 +6,6 @@ use Thiagoprz\HereGeocoder\HereGeocoder;
 
 class HereGeocoderFunctionTest extends TestCase
 {
-    protected $hereGeocoder;
-
-    public function setUp(): void
-    {
-        parent::setUp();
-        $this->hereGeocoder = new HereGeocoder();
-    }
-
     public function testGeocodeReturnIsValid()
     {
         $address_data = $this->hereGeocoder->geocode('Champ de Mars, 5 Avenue Anatole France, 75007 Paris');
