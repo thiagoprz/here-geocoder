@@ -11,9 +11,12 @@ abstract class TestCase extends BaseTestCase
 {
     use CreatesApplication;
 
+    protected $hereGeocoder;
+
     public function setUp(): void
     {
         parent::setUp();
+        $this->hereGeocoder = new HereGeocoder();
     }
 
     public function getPackageProviders(
