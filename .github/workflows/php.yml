@@ -14,7 +14,7 @@ jobs:
         os: ['ubuntu-latest']
 
     name: PHP v${{ matrix.php }}
-   steps:
+    steps:
     - uses: actions/checkout@v2
     - name: "Installing php"
       uses: shivammathur/setup-php@v2
@@ -35,8 +35,8 @@ jobs:
         key: ${{ matrix.os }}-composer-${{ hashFiles('**/composer.json') }}
         restore-keys: ${{ matrix.os }}-composer-
     - name: Install dependencies
-        run: |
+      run: |
           composer update --prefer-dist --no-interaction
     - name: Run tests
-        run: |
+      run: |
           ./vendor/bin/phpunit --coverage-clover coverage.xml
